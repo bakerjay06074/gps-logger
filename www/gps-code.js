@@ -2,6 +2,7 @@ var isStopButtonPushed = false;
 var watchID;
 var timerID;
 var isAppend = true;
+var csv_line;
 
 
 function init() {
@@ -21,28 +22,17 @@ function onDeviceReady() {
 
 
 function start_recording() {
-    //window.alert("button pushed");
+    window.alert("recording button pushed");
    
-    /*
+    
     watchID = navigator.geolocation.watchPosition(geolocationSuccess,
                                                  geolocationError,
-                                                  {mximumAge: 3600000,
-                                                   timeout: 3000,
+                                                  {mximumAge: 60000,
+                                                   timeout: 30000,
                                                    enableHighAccruacy:true}); 
-    */
-     timerID = setInterval(function(){jayGetPosition()}, 30000);
-}
-
-
-function jayGetPosition() {
     
-    navigator.geolocation.getCurrentPosition(geolocationSuccess,
-                                                 geolocationError,
-                                                  {mximumAge: 3600000,
-                                                   timeout: 25000,
-                                                   enableHighAccruacy:true});  
+     //timerID = setInterval(function(){jayGetPosition()}, 30000);
 }
-
 
 // onSuccess Callback 
 // This method accepts a Position object, which contains the 
@@ -61,9 +51,17 @@ var geolocationSuccess = function(position) {
     */
      document.getElementById("tbLongitude").value = position.coords.longitude;
      document.getElementById("tbLatitude").value = position.coords.latitude;
-    dataObj = new Blob([position.coords.timestamp], { type: 'text/plain'});
-    writeFile(fileEntry, dataObj, isAppend)
-    window.alert('got a new position');
+     document.getElementById("tbTime").value = position.timestamp;
+    
+    
+    csv_line = position.coords.longitude.toString() + "," + 
+        position.coords.latitude.tostring() + "," +
+        position.timestamp + "," +
+        position.coords.timestamp + "\n";
+    navigator.vibrate(1000);
+    //dataObj = new Blob([position.coords.timestamp], { type: 'text/plain'});
+    writeFile(fileEntry, csv_line, isAppend)
+    //window.alert('got a new position');
 };
  
 // onError Callback receives a PositionError object 
