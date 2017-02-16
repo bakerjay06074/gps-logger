@@ -27,9 +27,10 @@ function start_recording() {
     
     watchID = navigator.geolocation.watchPosition(geolocationSuccess,
                                                  geolocationError,
-                                                  {mximumAge: 60000,
+                                                  {maximumAge: 60000,
                                                    timeout: 30000,
-                                                   enableHighAccruacy:true}); 
+                                                   enableHighAccruacy:true});
+    window.alert("launched watchPosition");
     
      //timerID = setInterval(function(){jayGetPosition()}, 30000);
 }
