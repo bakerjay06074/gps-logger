@@ -11,12 +11,12 @@ function init() {
     // document.addEventListener("touchmove", preventBehavior, false);
     document.addEventListener("deviceready", onDeviceReady, false);
     //setInterval(function(){ alert("Hello, Jay"); }, 3000);
-    openFileSystem();
 }
 
 
 function onDeviceReady() {
     window.alert("In onDeviceReady");
+    openFileSystem();
     document.getElementById("tbLongitude").value = 100
 } 
 
