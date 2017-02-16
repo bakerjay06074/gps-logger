@@ -34,7 +34,7 @@ function writeFile(fileEntry, dataObj, isAppend) {
  
         fileWriter.onwriteend = function() {
             alert("Successful file read...");
-            readFile(fileEntry);
+            //readFile(fileEntry);
         };
  
         fileWriter.onerror = function (e) {
