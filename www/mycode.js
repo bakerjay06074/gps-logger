@@ -6,7 +6,7 @@ function init() {
 function onDeviceReady() {
     alert('onDeviceReady')
 */
-var fileEntry;
+// moved the following declaration into index.html--var fileEntry;
 
 function openFileSystem() {
   window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (dirEntry) {
