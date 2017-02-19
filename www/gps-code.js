@@ -61,7 +61,7 @@ var geolocationSuccess = function(position) {
         position.coords.accuracy.toString() + "\n";
     navigator.vibrate(1000);
     //dataObj = new Blob([position.coords.timestamp], { type: 'text/plain'});
-    writeFile(fileEntry, csv_line, isAppend)
+    writeFile(fileEntry_jay, csv_line, isAppend)
     //window.alert('got a new position');
 };
  
