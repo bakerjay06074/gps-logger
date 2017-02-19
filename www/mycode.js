@@ -20,7 +20,7 @@ function openFileSystem() {
 function createFile(dirEntry, fileName, isAppend) {
     // Creates a new file or returns the file if it already exists. 
     dirEntry.getFile(fileName, {create: true, exclusive: false}, function(fileEntry) {
-      fileEntry_jay = fileEntry;
+      fileEntry_jay = fileEntry;  //pass fileEntry pointer to global variable for subsequent writes
       
        // writeFile(fileEntry, null, isAppend);
       alert("file entry is created");
@@ -34,7 +34,7 @@ function writeFile(fileEntry, dataObj, isAppend) {
     fileEntry.createWriter(function (fileWriter) {
  
         fileWriter.onwriteend = function() {
-            alert("Successful file read...");
+            //alert("Successful file read...");
             //readFile(fileEntry);
         };
  
