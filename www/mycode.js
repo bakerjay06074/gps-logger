@@ -20,7 +20,8 @@ function openFileSystem() {
 function createFile(dirEntry, fileName, isAppend) {
     // Creates a new file or returns the file if it already exists. 
     dirEntry.getFile(fileName, {create: true, exclusive: false}, function(fileEntry) {
- 
+      fileEntry_jay = fileEntry;
+      
        // writeFile(fileEntry, null, isAppend);
       alert("file entry is created");
  
