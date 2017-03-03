@@ -58,6 +58,7 @@ var geolocationSuccess = function(position) {
     csv_line = position.coords.longitude.toString() + "," + 
         position.coords.latitude.toString() + "," +
         position.timestamp.toString() + "," +
+        position.coords.altitude.toString() + "," +
         position.coords.accuracy.toString() + "\n";
     navigator.vibrate(1000);
     //dataObj = new Blob([position.coords.timestamp], { type: 'text/plain'});
