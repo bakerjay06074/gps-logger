@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "com.phonegap.gps-logger"
+    id          = "com.phonegap.gps-logger-low-acc"
     versionCode = "10"
     version     = "1.0.0" >
 
 <!-- versionCode is optional and Android only -->
 
-  <name>GPS Logger</name>
+  <name>GPS Logger low acc</name>
 
   <description>
       An example for using File System with PhoneGap.
