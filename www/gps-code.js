@@ -29,7 +29,7 @@ function start_recording() {
                                                  geolocationError,
                                                   {maximumAge: 60000,
                                                    timeout: 30000,
-                                                   enableHighAccruacy:false});
+                                                   enableHighAccruacy:true});
     window.alert("launched watchPosition");
     
      //timerID = setInterval(function(){jayGetPosition()}, 30000);
